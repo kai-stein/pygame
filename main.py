@@ -16,6 +16,9 @@ def main():
         print(f"A Pygame display error occurred: {e}")
         print("This might be due to a missing display server or driver issues.")
         return # Exit if display setup failed
+    
+    pygame.time.Clock()
+    dt = 0
 
     while True:
         for event in pygame.event.get():
@@ -23,6 +26,7 @@ def main():
                 return
         screen.fill("black")
         pygame.display.flip()
+        dt = pygame.time.Clock.tick(60) / 1000
         #print("loop")
 
 

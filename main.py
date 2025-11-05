@@ -17,7 +17,7 @@ def main():
         print("This might be due to a missing display server or driver issues.")
         return # Exit if display setup failed
     
-    pygame.time.Clock()
+    clock = pygame.time.Clock()
     dt = 0
 
     while True:
@@ -26,7 +26,8 @@ def main():
                 return
         screen.fill("black")
         pygame.display.flip()
-        dt = pygame.time.Clock.tick(60) / 1000
+        tm = clock.tick(60) 
+        dt = tm / 1000
         #print("loop")
 
 
